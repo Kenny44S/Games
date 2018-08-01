@@ -7,13 +7,13 @@ public class TicTacToeBoard {
 
     private String nextMoveIs = "X";
 
-    private PlayerX playerX;
-    private PlayerO playerO;
+    private Player playerX;
+    private Player playerO;
 
     private int stepCount = 0;
 
-    boolean playerXWon = false;
-    boolean playerOWon = false;
+    private boolean playerXWon = false;
+    private boolean playerOWon = false;
 
 
 
@@ -122,24 +122,21 @@ public class TicTacToeBoard {
     public void GetUserMove()
     {
         int userMove = 0;
-
         Scanner input = new Scanner(System.in);
 
         if(nextMoveIs.equals("X"))
         {
-            System.out.println();
-            System.out.println("Player X to Move: ");
+            System.out.println("\nPlayer X to Move: ");
             userMove = input.nextInt();
-            playerX.move(userMove);
+            playerX.mark(userMove);
             nextMoveIs = "O";
             stepCount++;
         }
         else if(nextMoveIs.equals("O"))
         {
-            System.out.println();
-            System.out.println("Player O to Move: ");
+            System.out.println("\nPlayer O to Move: ");
             userMove = input.nextInt();
-            playerO.move(userMove);
+            playerO.mark(userMove);
             nextMoveIs = "X";
             stepCount++;
         }
@@ -151,16 +148,14 @@ public class TicTacToeBoard {
         {
             if(playerX.isWinner())
             {
-                System.out.println();
-                System.out.println(" * - . * - . * - . *");
+                System.out.println("\n * - . * - . * - . *");
                 System.out.println("YaY!! X is the winner!");
                 System.out.println(" * - . * - . * - . *");
                 System.exit(1);
             }
             else if(playerO.isWinner())
             {
-                System.out.println();
-                System.out.println(" * - . * - . * - . * - . *");
+                System.out.println("\n * - . * - . * - . * - . *");
                 System.out.println("YaY!! O is the winner");
                 System.out.println(" * - . * - . * - . * - . *");
                 System.exit(1);
