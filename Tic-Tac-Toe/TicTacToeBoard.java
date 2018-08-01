@@ -60,7 +60,7 @@ public class TicTacToeBoard {
 
     public void PrintBoard()
     {
-        System.out.println("\n-----------------");
+        System.out.println();
         for (int i = 0; i < size; i++)
         {
             if( playerX.boardPosition[i][0].equals("X"))
@@ -70,25 +70,22 @@ public class TicTacToeBoard {
             else
                 System.out.print(boardPositions[i][0] + " ");
 
-            System.out.print(" | ");
+
             for (int z = 1; z < size; z++)
             {
+                System.out.print(" | ");
                 if( playerX.boardPosition[i][z].equals("X"))
                     System.out.print(" X ");
                 else if(playerO.boardPosition[i][z].equals("O"))
                     System.out.print(" O ");
                 else
                     System.out.print(boardPositions[i][z] + " ");
-                System.out.print(" | ");
             }
-            if(i != 2) {
-                System.out.println();
-                System.out.println("_________________");
-
+            if(i <= 1) {
+                System.out.print("\n----------------");
             }
-            System.out.println();
+            System.out.print("\n");
         }
-        System.out.println("-----------------");
     }
 
 
@@ -101,6 +98,7 @@ public class TicTacToeBoard {
         }
 
         int c = 1;
+        System.out.print("\n");
         System.out.println("Available Moves are: ");
         for(int z = 0; z < size; z++)
         {

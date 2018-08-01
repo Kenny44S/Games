@@ -3,7 +3,7 @@ public class PlayerX extends Player{
     public PlayerX()
     {
         InitiateMyBoardPositions();
-        this.player = "X"
+        this.player = "X";
     }
 
 
