@@ -3,7 +3,6 @@ public class PlayerO extends Player {
     public PlayerO()
     {
         InitiateMyBoardPositions();
-
         this.player = "O";
     }
 
