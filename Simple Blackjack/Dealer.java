@@ -19,12 +19,12 @@ public class Dealer {
     {
         System.out.println("=======================");
         DealCard(p1, 2);
-        printMessage(p1, p1.getTotalHandValue());
+        printMessage(p1);
 
         System.out.println("=======================");
 
         DealCard(p2, 2);
-        printMessage(p2, p2.getTotalHandValue());
+        printMessage(p2);
         System.out.println("=========================================");
     }
 
@@ -32,7 +32,7 @@ public class Dealer {
     {
         playerChoice(p1);
 
-        printMessage(p2, p2.getTotalHandValue());
+        printMessage(p2);
         playerChoice(p2);
 
         ShowOutcome();
@@ -43,7 +43,7 @@ public class Dealer {
     {
         System.out.println("You pressed HIT! Dealing card..");
         DealCard(player, 1);
-        printMessage(player, player.getTotalHandValue());
+        printMessage(player);
 
         if(!(player.stay || player.busted || player.twentyOne || player.blackJack))
             playerChoice(player);
@@ -70,10 +70,11 @@ public class Dealer {
         }
     }
 
-    public void printMessage(Player player, int total)
+    public void printMessage(Player player)
     {
-        String message;
+        String message; int total = 0;
 
+        total = player.getTotalHandValue();
         message  = GetMessage(player);
 
         System.out.print(player.getPlayerName() + "'s hand: ");
